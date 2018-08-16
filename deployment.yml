@@ -1,19 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: java-demo-001
+  name: java-demo-005
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: java-demo-001
+      app: java-demo-005
   template:
     metadata:
       labels:
-        app: java-demo-001
+        app: java-demo-005
     spec:
       containers:
-      - name: java-demo-001
+      - name: java-demo-005
         image: registry.cn-shanghai.aliyuncs.com/qinyujia-test/java-demo:latest
         imagePullPolicy: Always
         ports:
@@ -23,12 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: java-demo-001
+  name: java-demo-005
 spec:
   ports:
   - port: 80
     targetPort: 8080
-    name: java-demo-001
+    name: java-demo-005
   selector:
-    app: java-demo-001
+    app: java-demo-005
   type: NodePort
